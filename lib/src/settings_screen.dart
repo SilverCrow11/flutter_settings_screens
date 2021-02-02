@@ -128,10 +128,18 @@ class _SettingsTile extends StatefulWidget {
 
   /// flag to show the child below the main tile elements
   final bool showChildBelow;
+  
+  /// options to provide TextStyle instead of default TextStyle
+  final TextStyle textStyleData;
+  
+  /// bool to check if textStyle is provided by user
+  final bool isTextStyle;
 
   _SettingsTile({
     @required this.title,
     @required this.child,
+    this.textStyleData,
+    this.istextStyle = false,
     this.subtitle = '',
     this.onTap,
     this.enabled = true,
@@ -159,7 +167,7 @@ class __SettingsTileState extends State<_SettingsTile> {
             leading: widget.leading,
             title: Text(
               widget.title,
-              style: headerTextStyle(context),
+              style: (widget.istextStyle)? widget.textStyleData : headerTextStyle(context),
             ),
             subtitle: widget.subtitle.isEmpty
                 ? null

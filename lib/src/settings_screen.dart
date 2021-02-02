@@ -1379,7 +1379,7 @@ class SwitchSettingsTile extends StatelessWidget {
         Widget mainWidget = _SettingsTile(
           leading: leading,
           title: title,
-          istextStyle: isTextStyle,
+          isTextStyle: isTextStyle,
           textStyleData: textStyleData,
           subtitle: getSubtitle(value),
           onTap: () => onChanged(!value),
@@ -1516,7 +1516,7 @@ class CheckboxSettingsTile extends StatelessWidget {
         var mainWidget = _SettingsTile(
           leading: leading,
           title: title,
-          istextStyle: isTextStyle,
+          isTextStyle: isTextStyle,
           textStyleData: textStyleData, //Might need a null check here
           enabled: enabled,
           subtitle: getSubtitle(value),

@@ -1345,6 +1345,8 @@ class SwitchSettingsTile extends StatelessWidget {
   final String settingKey;
   final bool defaultValue;
   final String title;
+  final bool isTextStyle;
+  final TextStyle textStyleData;
   final String subtitle;
   final bool enabled;
   final OnChanged<bool> onChange;
@@ -1356,6 +1358,8 @@ class SwitchSettingsTile extends StatelessWidget {
   SwitchSettingsTile({
     @required this.title,
     @required this.settingKey,
+    this.textStyleData,
+    this.isTextStyle = false,
     this.defaultValue = false,
     this.enabled = true,
     this.onChange,
@@ -1375,6 +1379,8 @@ class SwitchSettingsTile extends StatelessWidget {
         Widget mainWidget = _SettingsTile(
           leading: leading,
           title: title,
+          istextStyle: isTextStyle,
+          textStyleData: textStyleData,
           subtitle: getSubtitle(value),
           onTap: () => onChanged(!value),
           enabled: enabled,

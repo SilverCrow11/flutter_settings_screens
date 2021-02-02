@@ -76,21 +76,23 @@ import 'settings.dart';
 class SettingsScreen extends StatelessWidget {
   /// Appbar title in Scaffold.
   final String title;
+  final bool isTitleEnabled;
 
   /// Content of the screen, body of the Scaffold.
   final List<Widget> children;
 
   SettingsScreen({
     this.title = 'Settings',
+    this.isTitleEnabled = false,
     @required this.children,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: (isTitleEnabled)? AppBar(
         title: Text(title),
-      ),
+      ):null,
       body: ListView.builder(
         shrinkWrap: true,
         itemCount: children.length,

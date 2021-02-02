@@ -139,7 +139,7 @@ class _SettingsTile extends StatefulWidget {
     @required this.title,
     @required this.child,
     this.textStyleData,
-    this.istextStyle = false,
+    this.isTextStyle = false,
     this.subtitle = '',
     this.onTap,
     this.enabled = true,
@@ -167,7 +167,7 @@ class __SettingsTileState extends State<_SettingsTile> {
             leading: widget.leading,
             title: Text(
               widget.title,
-              style: (widget.istextStyle)? widget.textStyleData : headerTextStyle(context),
+              style: (widget.isTextStyle)? widget.textStyleData : headerTextStyle(context),
             ),
             subtitle: widget.subtitle.isEmpty
                 ? null

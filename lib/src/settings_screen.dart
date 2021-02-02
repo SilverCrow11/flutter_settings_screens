@@ -1476,6 +1476,8 @@ class CheckboxSettingsTile extends StatelessWidget {
   final String settingKey;
   final bool defaultValue;
   final String title;
+  final bool isTextStyle;
+  final TextStyle textStyleData;
   final String subtitle;
   final bool enabled;
   final OnChanged<bool> onChange;
@@ -1487,6 +1489,8 @@ class CheckboxSettingsTile extends StatelessWidget {
   CheckboxSettingsTile({
     @required this.title,
     @required this.settingKey,
+    this.textStyleData,
+    this.isTextStyle = false,
     this.defaultValue = false,
     this.enabled = true,
     this.onChange,
@@ -1506,6 +1510,8 @@ class CheckboxSettingsTile extends StatelessWidget {
         var mainWidget = _SettingsTile(
           leading: leading,
           title: title,
+          istextStyle: isTextStyle,
+          textStyleData: textStyleData, //Might need a null check here
           enabled: enabled,
           subtitle: getSubtitle(value),
           onTap: () => _onCheckboxChange(!value, onChanged),
